@@ -10,6 +10,7 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-level");
+const mysql = require("mysql");
 
 // This is your client. Some people call it `bot`, some people call it `self`,
 // some might call it `cootchie`. Either way, when you see `client.something`,
@@ -23,7 +24,7 @@ client.config = require("./config.js");
 
 // Let's start by getting some useful functions that we'll use throughout
 // the bot, like logs and elevation features.
-require("./modules/functions.js")(client);
+require("./modules/functions.js")(client, mysql);
 
 // Aliases and commands are put in collections where they can be read from,
 // catalogued, listed, etc.

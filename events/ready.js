@@ -9,4 +9,10 @@ module.exports = async client => {
 
   // We check for any guilds added while the bot was offline, if any were, they get a default configuration.
   client.guilds.filter(g => !client.settings.has(g.id)).forEach(g => client.settings.set(g.id, client.config.defaultSettings));
+
+  //Connect to the SQL server
+  client.con.connect(function(err) {
+    if (err) throw err;
+    client.log("log", "Connected to MySQL server.");
+  });
 };

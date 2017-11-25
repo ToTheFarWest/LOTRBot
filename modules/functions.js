@@ -1,4 +1,4 @@
-module.exports = (client) => {
+module.exports = (client, mysql) => {
 
   /*
   PERMISSION LEVEL FUNCTION
@@ -36,6 +36,15 @@ module.exports = (client) => {
     console.log(`[${type}] [${title}]${msg}`);
   };
 
+  /*
+  SQL Connection function.
+  */
+  client.con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: client.config.sqlpass,
+    database: "lotrbot"
+  });
 
   /*
   SINGLE-LINE AWAITMESSAGE
