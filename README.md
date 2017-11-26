@@ -1,6 +1,8 @@
 # LOTR Bot
 A fork of York's amazing [GuideBot](https://github.com/An-Idiots-Guide/guidebot) designed specifically for the LOTR server owner community. I used the GuideBot as a base to build off of, but many features were added to benefit LOTR server owners.
 
+I am hosting the official version of this bot, which can be invited to your server via [this link](https://discordapp.com/api/oauth2/authorize?client_id=384037879304814613&permissions=268692502&scope=bot)
+
 ## Requirements
 
 - `git` command line ([Windows](https://git-scm.com/download/win)|[Linux](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)|[MacOS](https://git-scm.com/download/mac)) installed
