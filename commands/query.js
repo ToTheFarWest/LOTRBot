@@ -2,8 +2,9 @@ exports.run = async(client, message, args, level) => {
   const sql = args.join(" ");
   client.con.query(sql, function(err, rows) {
     if (!err){
-      var result = JSON.stringify(rows);
-      message.channel.send(result);
+	    var result = JSON.stringify(rows);
+	    const clean = await client.clean(client, result);
+	    message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
     }
     else
       message.channel.send("Error while performing Query.");
