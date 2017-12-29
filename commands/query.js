@@ -3,7 +3,7 @@ exports.run = async(client, message, args, level) => {
   client.con.query(sql, function(err, rows) {
     if (!err){
 	    var result = JSON.stringify(rows);
-	    const clean = await client.clean(client, result);
+	    const clean = client.clean(client, result);
 	    message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
     }
     else
@@ -15,7 +15,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: "Bot Admin"
+  permLevel: "Bot Owner"
 };
 
 exports.help = {
